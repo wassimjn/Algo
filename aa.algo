@@ -1,0 +1,33 @@
+ALGORITHM Permutation
+VAR
+   d,m,y,n:INTEGER 
+   x: STRING
+BEGIN
+  y = n mod 100
+  m = n mod 10000 div 100
+  d = n div 10000
+        SWITCH (m) DO
+         case 01 : x= 'January'
+         case 02 : x= 'February'
+         case 03 : x= 'March'
+         case 04 : x= 'April'
+         case 05 : x= 'Mai'
+         case 06 : x= 'June'
+         case 07 : x= 'July'
+         case 08 : x= 'August'
+         case 09 : x= 'September'  
+         case 10 : x= 'October'
+         case 11 : x= 'November'  
+         case 12 : x= 'December'
+        END                          
+       IF
+         (((d = 29) and (m = 2) and ((y mod 4) != 0)) or (((m = 4) or (m = 6) 
+         or (m = 9) or (m = 11)) and (d = 31)) or ((d > 29) and (m = 2)) 
+         or (x.length != 6) or (31 < d) or (d < 1)) 
+          THEN
+           write('Date Invalide')
+          ElSE 
+           write('the day is ',d, ' ' , x , ' 20' , y)
+       END
+
+END
